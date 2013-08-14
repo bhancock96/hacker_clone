@@ -1,0 +1,21 @@
+<div class="container">
+  <h2><%= @user.name %>'s Profile</h2>
+  <h4><a href='/post/new'>New post</a></h4>
+  <h4>Posts</h4>
+  <ol>
+    <% @user.posts.each do |post| %>
+      <li><a href="/post/<%= post.id %>"><%= post.title %></a> on <%= post.created_at %> | <a href="/post/<%= post.id %>/edit">Edit</a> - <a href="/post/<%= post.id %>/delete">Delete</a></li>
+    <% end %>
+  </ol>
+
+
+  <h4>Comments</h4>
+  <ol>
+    <% @user.comments.each do |comment| %>
+      <li><a href="/post/<%= comment.post_id %>"><%= comment.body %></a> on <%= comment.created_at %>"</li>
+    <% end %>
+  </ol>
+
+
+</div>
+

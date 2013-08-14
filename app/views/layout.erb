@@ -19,8 +19,12 @@
 </head>
 <body>
   <header>
-    <h1>Title</h1>
-    <a href="/login">Login</a>
+    <h1>Hacker News</h1>
+    <% if current_user %>
+      <p>Hey, <%= @current_user.name %>! <a href="/user/<%= @current_user.id %>">My Profile</a> <a href="/logout">Logout</a></p>
+    <% else %>
+      <p><a href="/login">Login</a></p>
+    <% end %>
   </header>
   <%= yield %>
 </body>

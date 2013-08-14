@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Edit Post</h2>
+    <form action="/post/<%= @post.id %>/edit" method="post">
+      <input type="text" name="post[title]" value="<%= @post.title  %>">
+      <br>
+      <textarea type="text" name="post[body]"><%= @post.body %></textarea>
+      <br>
+      <input type="submit">
+  </form>
+ <a href="/">See all Posts</a>
+</div>
+

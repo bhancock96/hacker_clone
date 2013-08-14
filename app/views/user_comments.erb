@@ -1,0 +1,12 @@
+<div class="container">
+  <h2><%= @user.name %>'s Comments</h2>
+
+  <ol>
+    <% @user.comments.each do |comment| %>
+      <li><a href="/post/<%= comment.post_id %>"><%= comment.body %></a> on <%= comment.created_at %></li>
+    <% end %>
+  </ol>
+
+
+</div>
+

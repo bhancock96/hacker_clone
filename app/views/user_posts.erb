@@ -1,0 +1,11 @@
+<div class="container">
+  <h2><%= @user.name %>'s Posts</h2>
+  <ol>
+    <% @user.posts.each do |post| %>
+      <li><a href="/post/<%= post.id %>"><%= post.title %></a> on <%= post.created_at %>" and edit</li>
+    <% end %>
+  </ol>
+
+
+</div>
+

@@ -4,10 +4,17 @@
     <p><%= @post.body %></p>
  <ol>
   <% @post.comments.each do |comment| %>
-   <li><%= comment.body %></li>
+   <li><%= comment.body %> -- <a href="/user/<%= comment.user.id %>/posts"><%= comment.user.name %></a></li>
    <% end %>
  </ol>
 
+  <% if current_user %>
+    <form action="/post/<%= @post.id %>/comment" method="post">
+    <textarea type="text" name="comment[body]" placeholder="Comment"></textarea>
+    <br>
+    <input type="submit">
+  </form>
+  <% end %>
  <a href="/">See all Posts</a>
 </div>
 

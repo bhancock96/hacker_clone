@@ -1,8 +1,14 @@
+body {
+  background-image: url("http://i.istockimg.com/file_thumbview_approve/10290999/2/stock-illustration-10290999-floral-pattern.jpg"); 
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 5px solid gray;
+  border-radius: 15px;
+  background-color: white;
 }
 th {
   text-align: left;
@@ -19,8 +25,9 @@ header h1{
   line-height: 64px;
 }
 
-header a{
+header p{
   float: right;
   margin-right: 15px;
   line-height: 64px;
+  margin-top: 0;
 }
