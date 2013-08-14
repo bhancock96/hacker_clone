@@ -12,7 +12,7 @@
   <h4>Comments</h4>
   <ol>
     <% @user.comments.each do |comment| %>
-      <li><a href="/post/<%= comment.post_id %>"><%= comment.body %></a> on <%= comment.created_at %>"</li>
+      <li><a href="/post/<%= comment.post_id %>"><%= comment.body %></a> on <%= comment.created_at %>" - <a href="/comment/<%= comment.id %>/delete">Delete</a></li>
     <% end %>
   </ol>
 

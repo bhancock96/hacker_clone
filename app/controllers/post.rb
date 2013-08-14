@@ -25,6 +25,13 @@ get '/post/:id/delete' do
   redirect "/user/#{@user.id}"
 end
 
+get '/comment/:id/delete' do
+  @user = User.find(session[:user_id])
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+  redirect "/user/#{@user.id}"
+end
+
 post '/post/new' do
   @user = User.find(session[:user_id])
   post = Post.create(params[:post])
