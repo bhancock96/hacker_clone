@@ -46,3 +46,4 @@ post '/register' do
   session[:user_id] = @user.id
   redirect "/user/#{@user.id}"
 end
+

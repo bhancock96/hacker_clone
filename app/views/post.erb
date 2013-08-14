@@ -3,9 +3,11 @@
   <h4><%= @post.created_at.to_date %></h4>
     <p><%= @post.body %></p>
  <ol>
-  <% @post.comments.each do |comment| %>
-   <li><%= comment.body %> -- <a href="/user/<%= comment.user.id %>/posts"><%= comment.user.name %></a></li>
-   <% end %>
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+     <li><%= comment.body %> -- <a href="/user/<%= @user.id %>/posts"><%= @user.name %></a></li>
+    <% end %>
+  <% end %>
  </ol>
 
   <% if current_user %>

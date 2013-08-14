@@ -8,11 +8,17 @@ end
 
 
 3.times do
-  user = User.create(name: Faker::Internet.user_name, email: Faker::Internet.email, password: "password", password_confirmation: "password")
+  user = User.create( name: Faker::Internet.user_name, 
+                      email: Faker::Internet.email, 
+                      password: "password", 
+                      password_confirmation: "password")
+  
   10.times do
-    @post = Post.create(title: Faker::Lorem.sentence(word_count=3), body: Faker::Lorem.paragraphs(paragraph_count=1), user_id: user.id)
+    @post = Post.create( title: Faker::Lorem.sentence(word_count=3), 
+                         body: Faker::Lorem.paragraphs(paragraph_count=1), 
+                         user_id: user.id)
     3.times do
-      @post.comments << Comment.create(body: Faker::Lorem.paragraphs(paragraph_count=1))
+      @post.comments << Comment.create( body: Faker::Lorem.paragraphs(paragraph_count=1))
     end
   end
 end

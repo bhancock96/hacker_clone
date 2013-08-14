@@ -2,6 +2,12 @@
  <ol>
   <% @posts.each do |post| %>
    <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
+   <form action="/post/<%= post.id %>/upvote" method="post">
+   <input type="submit" id="upvote" value=": )">
+   </form>
+   <form action="/post/<%= post.id %>/downvote" method="post">
+      <input type="submit" id="downvote" value=": (">   
+   </form>
    <% end %>
  </ol>
 </div>

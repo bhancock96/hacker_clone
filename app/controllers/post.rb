@@ -4,6 +4,7 @@ end
 
 get '/post/:id' do
   @post = Post.find(params[:id])
+  @comments = @post.comments
   @user = User.find(@post.user_id)
   erb :post
 end
