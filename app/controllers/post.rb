@@ -18,6 +18,13 @@ get '/post/:id/edit' do
   end
 end
 
+get '/post/:id/delete' do
+  @user = User.find(session[:user_id])
+  @post = Post.find(params[:id])
+  @post.destroy
+  redirect "/user/#{@user.id}"
+end
+
 post '/post/new' do
   @user = User.find(session[:user_id])
   post = Post.create(params[:post])
@@ -41,3 +48,5 @@ post '/post/:id/edit' do
   # @user.posts << post
   redirect "/post/#{@post.id}"
 end
+
+
