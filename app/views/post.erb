@@ -1,0 +1,13 @@
+<div class="container">
+  <h2><%= @post.title %> - by <%= @post.user.name %></h2>
+  <h4><%= @post.created_at.to_date %></h4>
+    <p><%= @post.body %></p>
+ <ol>
+  <% @post.comments.each do |comment| %>
+   <li><%= comment.body %></li>
+   <% end %>
+ </ol>
+
+ <a href="/">See all Posts</a>
+</div>
+
