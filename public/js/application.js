@@ -1,8 +1,9 @@
 $(document).ready(function() {
-  $('#upvote').on('click', function(event){
+  $('#upvote').on('submit', function(event){
     event.preventDefault();
-    $.post(url, data, .....){
-      change the vote count in the view
+    var url = $(this).attr('action')
+    // $.post(url, function(response)){
+    //   change the vote count in the view
     }
   })
 });
