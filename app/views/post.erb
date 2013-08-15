@@ -1,21 +1,24 @@
 <div class="container">
-  <h2><%= @post.title %> - by <%= @post.user.name %></h2>
-  <h4><%= @post.created_at.to_date %></h4>
+  <div class="body">
+    <h2><%= @post.title %></h2>
+    <h4><%= @post.user.name %> on <%= @post.created_at.to_date %></h4>
     <p><%= @post.body %></p>
- <ol>
-  <% if @comments %>
-    <% @comments.each do |comment| %>
-     <li><%= comment.body %> -- <a href="/user/<%= @user.id %>/posts"><%= @user.name %></a></li>
-     <form action="/comment/<%= comment.id %>/upvote" method="post">
-   <input type="submit" id="upvote" value=": )">
-   </form>
-   <form action="/comment/<%= comment.id %>/downvote" method="post">
-      <input type="submit" id="downvote" value=": (">   
-   </form>
+  </div>
+  <div class="comments">
+    <ol>
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+       <li><%= comment.body %> -- <a href="/user/<%= @user.id %>/posts"><%= @user.name %></a></li>
+       <form action="/comment/<%= comment.id %>/upvote" method="post">
+     <input type="submit" id="upvote" value=": )">
+     </form>
+     <form action="/comment/<%= comment.id %>/downvote" method="post">
+        <input type="submit" id="downvote" value=": (">   
+     </form>
+      <% end %>
     <% end %>
-  <% end %>
- </ol>
-
+    </ol>
+  </div>
   <% if current_user %>
     <form action="/post/<%= @post.id %>/comment" method="post">
     <textarea type="text" name="comment[body]" placeholder="Comment"></textarea>

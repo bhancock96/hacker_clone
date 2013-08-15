@@ -1,15 +1,19 @@
+
+/***** Main layout *****/
+
 body {
   background-image: url("http://i.istockimg.com/file_thumbview_approve/10290999/2/stock-illustration-10290999-floral-pattern.jpg"); 
 }
 
 .container {
   margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
+  width: 720px;
+  padding: 20px;
   border: 5px solid gray;
   border-radius: 15px;
   background-color: white;
 }
+
 th {
   text-align: left;
 }
@@ -19,9 +23,18 @@ header {
   height: 64px;
 }
 
+header a {
+  text-decoration: none;
+  color: black;
+}
+header a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
 header h1{
   display:inline-block;
-  margin:0;
+  margin: 0;
   line-height: 64px;
 }
 
@@ -30,4 +43,37 @@ header p{
   margin-right: 15px;
   line-height: 64px;
   margin-top: 0;
+}
+
+/***** Index page post displays *****/ 
+li {
+  display: inline-block;
+}
+
+form {
+  display: inline-block;
+}
+
+.index a {
+  text-decoration: none;
+  color: #376C3C;
+}
+
+.index a:hover {
+  text-decoration: underline;
+}
+
+.index a:visited {
+  text-decoration: none;
+  color: #8EA373;
+}
+
+/***** single post*****/ 
+.body p {
+  color: #2C6F38;
+
+}
+
+.comments li {
+  color: #C82C5A;
 }

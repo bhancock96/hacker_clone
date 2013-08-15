@@ -12,6 +12,13 @@ post '/post/:id/downvote' do
   redirect '/'
 end
 
+post '/post/:id/unvote' do
+  vote = PostVote.find_or_create(user_id: session[:user_id],
+                                 post_id: params[:id])
+  vote.unvote
+  redirect '/'
+end
+
 post '/comment/:id/upvote' do
   vote = CommentVote.find_or_create(user_id: session[:user_id],
                                     comment_id: params[:id])

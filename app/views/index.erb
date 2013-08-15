@@ -1,13 +1,18 @@
 <div class="container">
- <ol>
-  <% @posts.each do |post| %>
-   <li><a href="/post/<%= post.id %>"><%= post.title %></a> -- Points <%= post.num_votes %></li>
-   <form action="/post/<%= post.id %>/upvote" method="post">
-   <input type="submit" id="upvote" value=": )">
-   </form>
-   <form action="/post/<%= post.id %>/downvote" method="post">
-      <input type="submit" id="downvote" value=": (">   
-   </form>
-   <% end %>
- </ol>
+  <div class="index"> 
+    <ol>
+      <% @posts.each do |post| %>
+        <form action="/post/<%= post.id %>/upvote" method="post">
+          <input type="submit" id="upvote" value=": )">
+        </form>
+        <form action="/post/<%= post.id %>/unvote" method="post">
+          <input type="submit" id="unvote" value=": |">   
+        </form>
+        <form action="/post/<%= post.id %>/downvote" method="post">
+          <input type="submit" id="downvote" value=": (">  
+        </form>
+        <li><a href="/post/<%= post.id %>"><%= post.title %></a> -- [<%= post.num_votes %>] Points</li><br>
+      <% end %>
+    </ol>
+  </div>
 </div>
